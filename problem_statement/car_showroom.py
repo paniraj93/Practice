@@ -12,6 +12,8 @@ class CarShowroom:
         self.br = ""
         self.mdl = ""
         self.typ = ""
+        self.cgst = 5555
+        self.sgst = 5555
 
     def company_selection(self):
         print("SELECT THE COMPANY\n1.TOYATA\n2.BMW")
@@ -71,18 +73,26 @@ class CarShowroom:
     def calculate_price(self):
         if self.br == "TOYATA" and self.mdl == "SUPRA" and self.typ == "Petrol":
             price = 5000000
-        elif self.br == "TOYATA" and self.mdl == "FORTUNER" and self.typ == "Diesel":
+        elif self.br == "TOYATA" and self.mdl == "SUPRA" and self.typ == "Diesel":
+            price = 4000000
+        elif self.br == "TOYATA" and self.mdl == "FORTUNER" and self.typ == "Petrol":
             price = 3000000
+        elif self.br == "TOYATA" and self.mdl == "FORTUNER" and self.typ == "Diesel":
+            price = 25000000
         elif self.br == "BMW" and self.mdl == "M3 COMPETITION" and self.typ == "Petrol":
             price = 7000000
-        elif self.br == "BMW" and self.mdl == "M4 COMPETITION" and self.typ == "Diesel":
+        elif self.br == "BMW" and self.mdl == "M3 COMPETITION" and self.typ == "Diesel":
             price = 6000000
+        elif self.br == "BMW" and self.mdl == "M4 COMPETITION" and self.typ == "Petrol":
+            price = 7500000
+        elif self.br == "BMW" and self.mdl == "M4 COMPETITION" and self.typ == "Diesel":
+            price = 6500000
         else:
             price = 0
 
-        sgst = 2.09 * price
-        cgst = 2.09 * price
-        total_price = price + sgst + cgst
+        # sgst = 2.09 * price
+        # cgst = 2.09 * price
+        total_price = price + self.sgst + self.cgst
         print("Total Price: ", total_price)
 
 car = CarShowroom()
